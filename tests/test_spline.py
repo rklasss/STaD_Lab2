@@ -36,12 +36,12 @@ def test_interpolate_point_success():
     assert result is not None
     assert round(result, 2) == 2.25
 
-# 6. Тест интерполяции вне диапазона узлов (экстраполяция)
+# 6. Тест интерполяции вне диапазона узлов 
 def test_interpolate_point_out_of_bounds():
     interpolator = SplineInterpolator()
     x_nodes = [0, 1, 2, 3]
     y_nodes = [0, 1, 4, 9]
-    point = 4  # Вне диапазона
+    point = 4  
     result = interpolator.interpolate_point(x_nodes, y_nodes, point)
     assert result is not None
 
@@ -57,7 +57,7 @@ def test_plot_interpolation_sin():
     x_nodes = [0, np.pi/2, np.pi, 3*np.pi/2, 2*np.pi]
     y_nodes = [0, 1, 0, -1, 0]
     interpolator.plot_interpolation(x_nodes, y_nodes, func_key=2)
-    assert True  # Если нет ошибок, тест проходит
+    assert True 
 
 # 9. Тест анализа чувствительности (без исключений)
 def test_analyze_sensitivity():
@@ -65,7 +65,7 @@ def test_analyze_sensitivity():
     x_nodes = [0, 1, 2, 3]
     y_nodes = [0, 1, 4, 9]
     interpolator.analyze_sensitivity(x_nodes, y_nodes, func_key=1)
-    assert True  # Если нет ошибок, тест проходит
+    assert True  
 
 # 10. Тест исключений при неверных данных
 def test_read_input_data_exception():
